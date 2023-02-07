@@ -20,7 +20,7 @@
   footer .container {
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
   }
   footer .container .line h2 {
@@ -40,9 +40,16 @@
   footer .container .line {
     color: #808080;
   }
-  .footer-1 .line p {
+  .footer-1 li {
+    list-style: none;
+  }
+  .footer-1 .line a {
     text-align: justify;
     padding: 18px 40px 20px 10px;
+  }
+  .footer-1 li a {
+    text-decoration: none;
+    display: inline-block;
   }
   .social {
     margin-top: 20px;
@@ -124,7 +131,7 @@
       padding: 40px;
     }
     footer .container {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
     }
     .copyright {
       padding: 8px 40px;
