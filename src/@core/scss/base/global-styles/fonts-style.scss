@@ -1,0 +1,32 @@
+@import '../bootstrap-extended/include'; // Bootstrap includes
+@import '../components/include'; // Components includes
+
+//--------------------------------------------> poppins Family
+
+//thin  100
+//light 300
+//regular 400
+//medium 500
+//bold 700
+
+// ** black
+.text-black-400 {
+  font-family: 'poppins-regular';
+  color: $black;
+}
+//--> extend black
+.text_black_1 {
+  @extend .text-black-400;
+  font-size: $font-size-14;
+}
+
+// ** white
+.text-white-400 {
+  font-family: 'poppins-regular';
+  color: $white;
+}
+//--> extend white
+.text_white_1 {
+  @extend .text-white-400;
+  font-size: $font-size-14;
+}

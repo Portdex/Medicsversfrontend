@@ -11,3 +11,8 @@
 
 // React Specific
 @import 'react/index';
+
+// ** global style
+@import './base/global-styles/fonts-style.scss';
+@import './base/global-styles/button-style.scss';
+@import './base/global-styles/layout-spaces.scss';

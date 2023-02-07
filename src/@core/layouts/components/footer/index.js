@@ -1,8 +1,9 @@
 // ** Icons Import
 import { Fragment } from 'react'
 import { Heart } from 'react-feather'
-import { Link, useHistory } from 'react-router-dom'
-import { Button, Input, InputGroup, InputGroupText } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import { Button, CardImg, Input, InputGroup, InputGroupText } from 'reactstrap'
+import { FooterImg1 } from '../../../../assets/images/card-imgs'
 import './index.scss'
 
 const Footer = () => {
@@ -12,11 +13,11 @@ const Footer = () => {
         <footer>
           <div className='container'>
             <div
-              className='footer-1 line'
+              className='footer-2 line'
               data-aos='fade-right'
               data-aos-duration='1050'
             >
-              <h2 className='text4_DarkGray200_13'>Support</h2>
+              <h2 className='text4_DarkGray200_13'>Jobs</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -24,7 +25,7 @@ const Footer = () => {
                     to='/customer/support/help/help-qna'
                     className='text4_DarkGray500_12'
                   >
-                    Help
+                    Contact us
                   </Link>
                 </li>
                 <li>
@@ -33,7 +34,7 @@ const Footer = () => {
                     to='/customer/support/contact-us'
                     className='text4_DarkGray500_12'
                   >
-                    Contact Us
+                    Job search
                   </Link>
                 </li>
                 <li>
@@ -42,7 +43,79 @@ const Footer = () => {
                     to='/customer/policies/announcement'
                     className='text4_DarkGray500_12'
                   >
-                    Announcement
+                    Recruiter directory
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Work from home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Browse jobs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Browse locations
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Popular searches
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Career advice
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Average salary checker
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Help
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Contact a read office
                   </Link>
                 </li>
               </ul>
@@ -52,26 +125,31 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1030'
             >
-              <h2 className='text4_DarkGray200_13'>About</h2>
+              <h2 className='text4_DarkGray200_13'>Recruiter</h2>
               <ul className='p-0'>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                    About Athometrip
+                  Recruiter site
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                    Location
+                  Post a job
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                    Career
+                  CV search
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                    Newsletter
+                  Recruiter agencies
+                  </a>
+                </li>
+                <li>
+                  <a href='#' className='text4_DarkGray500_12'>
+                  Recruiter advice
                   </a>
                 </li>
               </ul>
@@ -81,7 +159,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1010'
             >
-              <h2 className='text4_DarkGray200_13'>Services</h2>
+              <h2 className='text4_DarkGray200_13'>Courses</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -89,7 +167,7 @@ const Footer = () => {
                     to='/affilliate/inquiry'
                     className='text4_DarkGray500_12'
                   >
-                    Affilliate Inquiry
+                    Help
                   </Link>
                 </li>
                 <li>
@@ -98,7 +176,7 @@ const Footer = () => {
                     to='/influencer/home'
                     className='text4_DarkGray500_12'
                   >
-                    Influencer Program
+                    Contact us
                   </Link>
                 </li>
                 <li>
@@ -107,7 +185,7 @@ const Footer = () => {
                     to='/affilliate/affilliate-program'
                     className='text4_DarkGray500_12'
                   >
-                    Affilliate Program
+                    Find a course
                   </Link>
                 </li>
                 <li>
@@ -116,7 +194,61 @@ const Footer = () => {
                     to='/partner/partner-join'
                     className='text4_DarkGray500_12'
                   >
-                    Join as Partner
+                    View all subjects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Discount courses
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Online courses
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Free courses
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Awarding body directory
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Career guides
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a'
+                    to='/partner/partner-join'
+                    className='text4_DarkGray500_12'
+                  >
+                    Advertise a course
                   </Link>
                 </li>
               </ul>
@@ -126,7 +258,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1010'
             >
-              <h2 className='text4_DarkGray200_13'>Support</h2>
+              <h2 className='text4_DarkGray200_13' style={{whiteSpace: 'nowrap'}}>More from reed.co.uk</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -134,7 +266,7 @@ const Footer = () => {
                     to='/customer/support/help/help-qna'
                     className='text4_DarkGray500_12'
                   >
-                    Help
+                    About us
                   </Link>
                 </li>
                 <li>
@@ -143,7 +275,7 @@ const Footer = () => {
                     to='/customer/support/contact-us'
                     className='text4_DarkGray500_12'
                   >
-                    Contact Us
+                    Career
                   </Link>
                 </li>
                 <li>
@@ -152,18 +284,36 @@ const Footer = () => {
                     to='/customer/policies/announcement'
                     className='text4_DarkGray500_12'
                   >
-                    Announcement
+                    Press office
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Corporate Governance
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Modern slavery statements
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div
-              className='footer-3 line'
+              className='footer-2 line'
               data-aos='fade-right'
               data-aos-duration='990'
             >
-              <h2 className='text4_DarkGray200_13'>Support</h2>
+              <h2 className='text4_DarkGray200_13'>Reed</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -171,7 +321,7 @@ const Footer = () => {
                     to='/customer/support/help/help-qna'
                     className='text4_DarkGray500_12'
                   >
-                    Help
+                    Tempzone
                   </Link>
                 </li>
                 <li>
@@ -180,7 +330,7 @@ const Footer = () => {
                     to='/customer/support/contact-us'
                     className='text4_DarkGray500_12'
                   >
-                    Contact Us
+                    Authorise timesheets
                   </Link>
                 </li>
                 <li>
@@ -189,13 +339,58 @@ const Footer = () => {
                     to='/customer/policies/announcement'
                     className='text4_DarkGray500_12'
                   >
-                    Announcement
+                    Group Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                   Global
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Partnership
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    tag='a '
+                    to='/customer/policies/announcement'
+                    className='text4_DarkGray500_12'
+                  >
+                    James Reed
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <hr />
+          <div className='flex-row-between my-5'>
+          <div className='d-flex align-items-center gap-1'>
+            <img src={FooterImg1} width={135} height={207}/>
+            <div className='d-flex flex-column'>
+            <span>Nail your next interview</span>
+            <span>Learn how to answer 101 of the most common questions now.</span>
+            <span>{`Buy James read best selling books>>`}</span>
+            </div>
+          </div>
+          </div>
         </footer>
         <div className='copyright'>
           <div className='d-flex flex-lg-row gap-md-4 flex-xs-col-center'>

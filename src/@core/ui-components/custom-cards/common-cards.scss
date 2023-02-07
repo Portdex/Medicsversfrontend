@@ -9,3 +9,21 @@
     max-height: 200px;
     cursor: pointer;
   }
+
+  // ** SecondCommonCard
+  .Second-commonCard-main {
+    border: 1px solid #000000;
+    border-radius: 15px;
+    padding: 28px 20px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .secondCardBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .graySection {
+    background: rgba(217, 217, 217, 0.58);
+    border-radius: 15px;
+    padding: 20px 23px;
+  }

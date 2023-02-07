@@ -1,6 +1,7 @@
 @import '../../../../@core/scss/base/bootstrap-extended/include'; // Bootstrap includes
 @import '../../../../@core/scss/base/components/include'; // Components includes
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import '../../../../@core/scss/base/global-styles/fonts-style.scss'; // fonts includes
 
 .footer_position {
   position: relative;
@@ -13,9 +14,9 @@
     position: relative;
     width: 100%;
     height: auto;
-    padding: 50px 100px 10px 100px;
+    padding: 50px 20px 10px 20px;
     border-top: 1px solid #e7ecf3;
-    background-color: #ffffff;
+    background-color: #081351;
   }
   footer .container {
     width: 100%;
@@ -85,12 +86,13 @@
     list-style: none;
   }
   .footer-2 li a {
+    @extend .text_white_1;
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
   }
   .footer-2 li a:hover {
-    color: $primary;
+    color: #ff00cd;
   }
   .footer-3 {
     position: relative;
