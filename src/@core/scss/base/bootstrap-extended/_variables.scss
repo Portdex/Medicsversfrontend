@@ -39,7 +39,7 @@ $info: $blue !default;
 $warning: $orange !default;
 $light: $gray-50 !default;
 $dark: #4b4b4b !default;
-
+$pink: #ff00cd !default;
 $min-contrast-ratio: 3 !default;
 
 // Spacing
@@ -126,11 +126,12 @@ $font-size-34: 34px !default;
 $font-size-35: 35px !default;
 $font-size-40: 40px !default;
 $font-size-48: 48px !default;
+$font-size-58: 58px !default;
 
 // Body
 //
 // Settings for the `<body>` element.
-$body-bg: #f8f8f8 !default;
+$body-bg: #ffffff !default;
 $body-color: #6e6b7b !default;
 
 // Links

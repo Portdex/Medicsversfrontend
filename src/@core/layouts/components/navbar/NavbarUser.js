@@ -5,7 +5,7 @@ import { Fragment } from 'react'
 import UserDropdown from './UserDropdown'
 
 // ** Third Party Components
-import { Sun, Moon } from 'react-feather'
+import { Sun, Moon, Heart } from 'react-feather'
 
 // ** Reactstrap Imports
 import { NavItem, NavLink, Button } from 'reactstrap'
@@ -33,13 +33,15 @@ const NavbarUser = (props) => {
       <ul className='nav navbar-nav align-items-center ms-auto'>
         {/* <UserDropdown /> */}
         <Button color='primary' size='sm' outline>
-          Register CV
+          <span className='text_black_2'>Register CV</span>
         </Button>
         <Button color='withe' size='sm' outline>
-          Sign in
+          <span className='text_black_2'>Sign in</span>
         </Button>
         <Button color='withe' size='sm' outline>
-          Saved Jobs
+        <span className='text_black_2'>
+          <Heart size={18} className='ficon' /> Saved Jobs
+          </span>
         </Button>
       </ul>
     </Fragment>

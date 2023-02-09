@@ -7,6 +7,7 @@
 //light 300
 //regular 400
 //medium 500
+// semibold 600
 //bold 700
 
 // ** black
@@ -14,19 +15,113 @@
   font-family: 'poppins-regular';
   color: $black;
 }
+.text-black-600 {
+  font-family: 'poppins-semibold';
+  color: $black;
+}
 //--> extend black
 .text_black_1 {
   @extend .text-black-400;
   font-size: $font-size-14;
 }
+.text_black_2 {
+  @extend .text-black-400;
+  font-size: $font-size-16;
+}
+.text_black_3 {
+  @extend .text-black-600;
+  font-size: $font-size-16;
+}
+.text_black_4 {
+  @extend .text-black-400;
+  font-size: $font-size-20;
+}
+.text_black_5 {
+  @extend .text-black-600;
+  font-size: $font-size-30;
+}
+
 
 // ** white
 .text-white-400 {
   font-family: 'poppins-regular';
   color: $white;
 }
+.text-white-600 {
+  font-family: 'poppins-semibold';
+  color: $white;
+}
+.text-white-500 {
+  font-family: 'poppins-medium';
+  color: $white;
+}
+
 //--> extend white
 .text_white_1 {
   @extend .text-white-400;
   font-size: $font-size-14;
+}
+.text_white_2 {
+  @extend .text-white-600;
+  font-size: $font-size-58;
+}
+.text_white_3 {
+  @extend .text-white-600;
+  font-size: $font-size-32;
+}
+.text_white_4 {
+  @extend .text-white-600;
+  font-size: $font-size-16;
+}
+.text_white_5 {
+  @extend .text-white-500;
+  font-size: $font-size-16;
+}
+.text_white_6 {
+  @extend .text-white-600;
+  font-size: $font-size-18;
+}
+
+// ** primary
+.text_primary_700 {
+  font-family: 'poppins-bold';
+  color: $primary;
+}
+.text_primary_500 {
+  font-family: 'poppins-medium';
+  color: $primary;
+}
+
+// --> extend primary
+.text_primary_1 {
+  @extend .text_primary_700;
+  font-size: $font-size-22;
+}
+.text_primary_2 {
+  @extend .text_primary_700;
+  font-size: $font-size-32;
+}
+.text_primary_3 {
+  @extend .text_primary_500;
+  font-size: $font-size-18;
+}
+.text_primary_4 {
+  @extend .text_primary_500;
+  font-size: $font-size-20;
+}
+
+// ** Pink
+.text_pink_500 {
+  font-family: 'poppins-medium';
+  color: $pink;
+}
+
+// --> extend Pink
+.text_pink_1 {
+  @extend .text_pink_500;
+  font-size: $font-size-22;
+}
+.text_pink_2 {
+  @extend .text_pink_500;
+  font-size: $font-size-18;
 }
