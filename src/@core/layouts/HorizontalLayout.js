@@ -150,17 +150,17 @@ const HorizontalLayout = (props) => {
                       <Nav>
                         <NavItem>
                           <NavLink href='#' active>
-                            Jobs
+                            <span className='text_black_2'>Jobs</span>
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'>Courses</NavLink>
+                          <NavLink href='#'><span className='text_black_2'>Courses</span></NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'>Career advice</NavLink>
+                          <NavLink href='#'><span className='text_black_2'>Career advice</span></NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'>Recruiting? Post a job</NavLink>
+                          <NavLink href='#'><span className='text_black_2'>Recruiting?</span> <span className='text_black_3'>Post a job</span></NavLink>
                         </NavItem>                      
                       </Nav>
                     </ul>

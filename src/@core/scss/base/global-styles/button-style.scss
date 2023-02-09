@@ -1,2 +1,7 @@
 @import '../bootstrap-extended/include'; // Bootstrap includes
 @import '../components/include'; // Components includes
+
+.Btn-pink {
+    background-color: $pink !important;
+    border-radius: 0px !important;
+}

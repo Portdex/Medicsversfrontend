@@ -29,7 +29,7 @@ const CommonCardOne = (props) => {
         </div>
       </CardHeader>
       <CardBody className='p-0'>
-        <span style={{color: '#081351', whiteSpace: 'nowrap', fontSize: 20, fontWeight: 'bold'}}>{text}</span>
+        <span className='text_primary_4' style={{whiteSpace: 'nowrap'}}>{text}</span>
       </CardBody>
     </Card>
   )

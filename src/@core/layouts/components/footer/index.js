@@ -129,27 +129,27 @@ const Footer = () => {
               <ul className='p-0'>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                  Recruiter site
+                    Recruiter site
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                  Post a job
+                    Post a job
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                  CV search
+                    CV search
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                  Recruiter agencies
+                    Recruiter agencies
                   </a>
                 </li>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
-                  Recruiter advice
+                    Recruiter advice
                   </a>
                 </li>
               </ul>
@@ -258,7 +258,12 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1010'
             >
-              <h2 className='text4_DarkGray200_13' style={{whiteSpace: 'nowrap'}}>More from reed.co.uk</h2>
+              <h2
+                className='text4_DarkGray200_13'
+                style={{ whiteSpace: 'nowrap' }}
+              >
+                More from reed.co.uk
+              </h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -348,7 +353,7 @@ const Footer = () => {
                     to='/customer/policies/announcement'
                     className='text4_DarkGray500_12'
                   >
-                   Global
+                    Global
                   </Link>
                 </li>
                 <li>
@@ -381,20 +386,28 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className='flex-row-between my-5'>
-          <div className='d-flex align-items-center gap-1'>
-            <img src={FooterImg1} width={135} height={207}/>
-            <div className='d-flex flex-column'>
-            <span>Nail your next interview</span>
-            <span>Learn how to answer 101 of the most common questions now.</span>
-            <span>{`Buy James read best selling books>>`}</span>
-            </div>
-          </div>
-          </div>
         </footer>
         <div className='copyright'>
           <div className='d-flex flex-lg-row gap-md-4 flex-xs-col-center'>
-            <div className='flex-lg-row flex-sm-column flex-xs-col-center align-items-center d-flex gap-2 '>
+            <div className='d-flex justify-content-between align-items-center w-100'>
+              <div className='flex-row-between my-5'>
+                <div className='d-flex align-items-center gap-1'>
+                  <img src={FooterImg1} width={135} height={207} />
+                  <div className='d-flex flex-column'>
+                    <span>Nail your next interview</span>
+                    <span>
+                      Learn how to answer 101 of the most common questions now.
+                    </span>
+                    <span>{`Buy James read best selling books>>`}</span>
+                  </div>
+                </div>
+              </div>
+              <div className='flex-col-end'>
+                <span>Manage preference, security, privacy</span>
+                <span>COPYRIGHT © Reed.co.uk 2023</span>
+              </div>
+            </div>
+            {/* <div className='flex-lg-row flex-sm-column flex-xs-col-center align-items-center d-flex gap-2 '>
               <Link
                 tag='a'
                 to='/customer/policies/terms-condition'
@@ -407,15 +420,9 @@ const Footer = () => {
               <span className='text4_DarkGray500_12'>
                 Cancellation and Refund Policy
               </span>
-            </div>
+            </div> */}
             <div className='d-flex align-items-center flex-lg-row flex-sm-column flex-xs-col-center  gap-1'>
-              <div className='gap_15 d-flex'>
-                {/* <IconSocial1 />
-                <IconApple />
-                <IconInsta />|
-                <IconPlaystore />
-                <IconYoutube /> */}
-              </div>
+              <div className='gap_15 d-flex'></div>
             </div>
           </div>
         </div>
