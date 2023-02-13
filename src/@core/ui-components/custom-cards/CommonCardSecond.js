@@ -11,11 +11,12 @@ const CommonCardSecond = (props) => {
   const {
     text,
     subText,
-    price
+    price,
+    color
   } = props
 
   return (
-    <Card className='ecommerce-card m-0 Second-commonCard-main'>
+    <Card className='ecommerce-card m-0 Second-commonCard-main' style={{backgroundColor: color ? color : 'transparent'}}>
       <CardBody className='p-0 secondCardBody'>
         <span className='text_pink_1' style={{whiteSpace: 'nowrap'}}>{text}</span>
         <span className='text_black_4' style={{whiteSpace: 'nowrap'}}>{subText}</span>

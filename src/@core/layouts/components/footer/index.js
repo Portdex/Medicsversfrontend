@@ -17,7 +17,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1050'
             >
-              <h2 className='text4_DarkGray200_13'>Jobs</h2>
+              <h2 className='text_white_7'>Jobs</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -125,7 +125,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1030'
             >
-              <h2 className='text4_DarkGray200_13'>Recruiter</h2>
+              <h2 className='text_white_7'>Recruiter</h2>
               <ul className='p-0'>
                 <li>
                   <a href='#' className='text4_DarkGray500_12'>
@@ -159,7 +159,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='1010'
             >
-              <h2 className='text4_DarkGray200_13'>Courses</h2>
+              <h2 className='text_white_7'>Courses</h2>
               <ul className='p-0'>
                 <li>
                   <Link
@@ -259,7 +259,7 @@ const Footer = () => {
               data-aos-duration='1010'
             >
               <h2
-                className='text4_DarkGray200_13'
+                className='text_white_7'
                 style={{ whiteSpace: 'nowrap' }}
               >
                 More from reed.co.uk
@@ -318,7 +318,7 @@ const Footer = () => {
               data-aos='fade-right'
               data-aos-duration='990'
             >
-              <h2 className='text4_DarkGray200_13'>Reed</h2>
+              <h2 className='text_white_7'>Reed</h2>
               <ul className='p-0'>
                 <li>
                   <Link

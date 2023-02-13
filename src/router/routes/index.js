@@ -18,6 +18,15 @@ const Routes = [
     }
   },
   {
+    path: '/search',
+    component: lazy(() => import('../../views/JobSearchPage')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
     path: '/second-page',
     component: lazy(() => import('../../views/SecondPage'))
   },
