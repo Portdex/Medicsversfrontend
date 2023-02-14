@@ -24,7 +24,7 @@ const SearchSection = (props) => {
  
       </div>
       <Button.Ripple color='#FF00CD' className='Btn-pink search-container-btn'>
-        <span className='text_white_5'>Search Jobs</span>
+        <span className='text_white_5' onClick={() => history.push(path)}>Search Jobs</span>
       </Button.Ripple>
  
     </div>

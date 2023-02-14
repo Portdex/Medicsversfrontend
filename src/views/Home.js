@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Row, Col, Button } from 'reactstrap'
 import PrimaryOutlinebtn from '../@core/ui-components/buttons/PrimaryOutlinebtn'
 import CommonCardOne from '../@core/ui-components/custom-cards/CommonCardOne'
@@ -14,7 +14,27 @@ import {
   SearchSectionImg
 } from '../assets/images/card-imgs'
 
+import axios from 'axios'
+
 const Home = () => {
+  const [data, setData] = useState([])
+  const [noOfData, setnoOfData] = useState(3)
+  const getJobs = async () => {
+    const res = await axios({
+      method: 'get',
+      url:'http://100.26.167.192:5000/api/v1/jobs/'
+  })
+    setData(res.data)
+  }
+
+  useEffect(() => {
+    getJobs()
+  }, [])
+
+  const loadMore = () => {
+    setnoOfData(noOfData + noOfData)
+  }
+  const slice = data.slice(0, noOfData)
   return (
     <Fragment>
       <div
@@ -40,7 +60,6 @@ const Home = () => {
         <div className=''>
           <SearchSection path='/search'/>
         </div>
-        <SearchSection />
         <div className='flex-col-center mt_13'>
           <span className='text_white_6'>
             Search 227,388 new jobs - 11,801 added in the last 24 hours
@@ -112,7 +131,22 @@ const Home = () => {
         <span className='text_primary_2'>Popular Jobs</span>
       </div>
       <Row className='g-2'>
-        <Col sm={6} md={6} lg={4} xxl={3}>
+        {
+          slice?.map((item, i) => {
+            return (
+              <Col key={i} sm={6} md={6} lg={4} xxl={3}>
+                <CommonCardSecond
+                  text={item?.title}
+                  subText={item?.agency_name}
+                  price={item?.salary}
+                  type={item?.job_types}
+                  location={item?.location}
+                />
+              </Col>
+            )
+          })
+        }
+        {/* <Col sm={6} md={6} lg={4} xxl={3}>
           <CommonCardSecond
             text='Security Job'
             subText='Vision2Learn'
@@ -132,20 +166,14 @@ const Home = () => {
             subText='Vision2Learn'
             price='15k - 25k'
           />
-        </Col>
-        <Col sm={6} md={6} lg={4} xxl={3}>
-          <CommonCardSecond
-            text='Security Job'
-            subText='Vision2Learn'
-            price='15k - 25k'
-          />
-        </Col>
+        </Col> */}
       </Row>
       <div className='flex-col-center'>
         <Button
           outline
           color='primary'
           className='mt_30 mb-5'
+          onClick={() => loadMore()}
           style={{
             borderRadius: 0,
             borderWidth: 2,

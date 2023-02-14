@@ -6,6 +6,12 @@ import useJwt from '@src/auth/jwt/useJwt'
 
 const config = useJwt.jwtConfig
 
+export const STATUSES = Object.freeze({
+  IDLE: 'idle',
+  ERROR: 'error',
+  LOADING: 'loading'
+})
+
 const initialUser = () => {
   const item = window.localStorage.getItem('userData')
   //** Parse stored json or if none return initialValue
@@ -34,10 +40,13 @@ export const authSlice = createSlice({
       localStorage.removeItem('userData')
       localStorage.removeItem(config.storageTokenKeyName)
       localStorage.removeItem(config.storageRefreshTokenKeyName)
+    },
+    setStatus: (state, action) => {
+      state.status = action.payload
     }
   }
 })
 
-export const { handleLogin, handleLogout } = authSlice.actions
+export const { handleLogin, handleLogout, setStatus } = authSlice.actions
 
 export default authSlice.reducer
