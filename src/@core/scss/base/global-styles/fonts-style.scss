@@ -133,6 +133,10 @@
   @extend .text_primary_400;
   font-size: $font-size-14;
 }
+.text_primary_8 {
+  @extend .text_primary_600;
+  font-size: $font-size-18;
+}
 
 // ** Pink
 .text_pink_500 {
@@ -155,9 +159,17 @@
   font-family: 'poppins-semibold';
   color: $skyblue;
 }
+.text_skyblue_400 {
+  font-family: 'poppins-regular';
+  color: $skyblue;
+}
 
 // --> extend skyblue
 .text_skyblue_1 {
   @extend .text_skyblue_600;
   font-size: $font-size-20;
+}
+.text_skyblue_2 {
+  @extend .text_skyblue_400;
+  font-size: $font-size-16;
 }

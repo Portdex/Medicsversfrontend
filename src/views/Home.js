@@ -18,6 +18,7 @@ import axios from 'axios'
 
 const Home = () => {
   const [data, setData] = useState([])
+  const [catData, setCatData] = useState()
   const [noOfData, setnoOfData] = useState(3)
   const getJobs = async () => {
     const res = await axios({
@@ -27,8 +28,17 @@ const Home = () => {
     setData(res.data)
   }
 
+  const getJobCat = async () => {
+    const res = await axios({
+      method: 'get',
+      url:'http://100.26.167.192:5000/api/v1/jobs/categories/'
+  })
+    setCatData(res.data)
+  }
+
   useEffect(() => {
     getJobs()
+    getJobCat()
   }, [])
 
   const loadMore = () => {
@@ -83,18 +93,13 @@ const Home = () => {
         <span className='text_primary_2'>Trending Jobs</span>
       </div>
       <div className='flex-row-center gap-1 mt-4 px-5 flex-wrap'>
-        <PrimaryOutlinebtn text='Work from home jobs' />
-        <PrimaryOutlinebtn text='Immediate start jobs' />
-        <PrimaryOutlinebtn text='Manager jobs' />
-        <PrimaryOutlinebtn text='Finance jobs' />
-        <PrimaryOutlinebtn text='Warehouse jobs' />
-        <PrimaryOutlinebtn text='Accountant jobs' />
-        <PrimaryOutlinebtn text='Work from home jobs' />
-        <PrimaryOutlinebtn text='Immediate start jobs' />
-        <PrimaryOutlinebtn text='Manager jobs' />
-        <PrimaryOutlinebtn text='Finance jobs' />
-        <PrimaryOutlinebtn text='Warehouse jobs' />
-        <PrimaryOutlinebtn text='Accountant jobs' />
+        {
+          catData?.map((item) => {
+            return (
+              <PrimaryOutlinebtn id={item?.cat_id} path='/search' key={item?.cat_id} text={item?.cat_name} />
+            )
+          })
+        }
       </div>
       <div className='flex-col-center mt-4 mb-2'>
         <div className='flex-row-between' style={{ width: '35%' }}>
@@ -141,6 +146,7 @@ const Home = () => {
                   price={item?.salary}
                   type={item?.job_types}
                   location={item?.location}
+                  path={item?.apply_link}
                 />
               </Col>
             )

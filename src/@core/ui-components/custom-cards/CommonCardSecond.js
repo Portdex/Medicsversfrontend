@@ -14,7 +14,8 @@ const CommonCardSecond = (props) => {
     price,
     color,
     location,
-    type
+    type,
+    path
   } = props
 
   return (
@@ -33,7 +34,7 @@ const CommonCardSecond = (props) => {
                 <span className='text_black_1'>{location}</span>
             </div>
         </div>
-        <u><a className='text_pink_2' href=''>Read More</a></u>
+        <u><a className='text_pink_2' href={path}>Read More</a></u>
       </CardBody>
     </Card>
   )

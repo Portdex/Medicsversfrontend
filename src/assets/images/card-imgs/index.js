@@ -12,6 +12,7 @@ import BlackHeartImg from './blackHeart.png'
 import BlackCrossImg from './blackCross.png'
 import BlackMarkerImg from './blackMarker.png'
 import JobCardImg from './jobCardImg.png'
+import GreaterThanImg from './right.png'
 
 export {
     FirstCardImg,
@@ -27,5 +28,6 @@ export {
     BlackHeartImg,
     BlackMarkerImg,
     BlackDropDownIcon,
-    JobCardImg
+    JobCardImg,
+    GreaterThanImg
 }

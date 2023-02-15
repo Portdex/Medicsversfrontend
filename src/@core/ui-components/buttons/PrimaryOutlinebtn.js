@@ -1,8 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { Button } from 'reactstrap'
+import { handleCategory } from '../../../redux/category'
 
 const PrimaryOutlinebtn = (props) => {
-  const { text } = props
+  const { text, path, id } = props
+  const history = useHistory()
+  const dispatch = useDispatch()
   return (
     <Button
       outline
@@ -15,6 +20,10 @@ const PrimaryOutlinebtn = (props) => {
         paddingLeft: 16
       }}
       className='text-primary'
+      onClick={() => {
+        dispatch(handleCategory(id))
+        history.push(path)
+      }}
     >
       <span className='text_primary_3'>{text}</span>
     </Button>

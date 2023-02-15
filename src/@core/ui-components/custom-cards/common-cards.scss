@@ -61,6 +61,17 @@
   box-shadow: none;
 }
 
+// Sidebar-component
+.Sidebar-component {
+  border: 0.5px solid #ADADAD;
+  border-radius: 25px;;
+  background: transparent;
+  box-shadow: none;
+}
+ 
+.Sidebar-component-padding {
+  padding: 21px 16px;
+}
 // break points
 
 @include media-breakpoint-down(lg) {
