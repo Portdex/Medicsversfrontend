@@ -22,8 +22,8 @@ const Home = () => {
   const getJobs = async () => {
     const res = await axios({
       method: 'get',
-      url:'http://100.26.167.192:5000/api/v1/jobs/'
-  })
+      url: 'http://100.26.167.192:5000/api/v1/jobs/'
+    })
     setData(res.data)
   }
 
@@ -55,10 +55,9 @@ const Home = () => {
             </span>
             <p className='text_white_3 mt-2'>Find a job you’ll love</p>
           </div>
-        
         </div>
         <div className=''>
-          <SearchSection path='/search'/>
+          <SearchSection path='/search' />
         </div>
         <div className='flex-col-center mt_13'>
           <span className='text_white_6'>
@@ -131,21 +130,19 @@ const Home = () => {
         <span className='text_primary_2'>Popular Jobs</span>
       </div>
       <Row className='g-2'>
-        {
-          slice?.map((item, i) => {
-            return (
-              <Col key={i} sm={6} md={6} lg={4} xxl={3}>
-                <CommonCardSecond
-                  text={item?.title}
-                  subText={item?.agency_name}
-                  price={item?.salary}
-                  type={item?.job_types}
-                  location={item?.location}
-                />
-              </Col>
-            )
-          })
-        }
+        {slice?.map((item, i) => {
+          return (
+            <Col key={i} sm={6} md={6} lg={4} xxl={3}>
+              <CommonCardSecond
+                text={item?.title}
+                subText={item?.agency_name}
+                price={item?.salary}
+                type={item?.job_types}
+                location={item?.location}
+              />
+            </Col>
+          )
+        })}
         {/* <Col sm={6} md={6} lg={4} xxl={3}>
           <CommonCardSecond
             text='Security Job'
