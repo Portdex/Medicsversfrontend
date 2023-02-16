@@ -23,16 +23,16 @@ const Home = () => {
   const getJobs = async () => {
     const res = await axios({
       method: 'get',
-      url:'http://100.26.167.192:5000/api/v1/jobs/'
-  })
+      url: 'http://100.26.167.192:5000/api/v1/jobs/'
+    })
     setData(res.data)
   }
 
   const getJobCat = async () => {
     const res = await axios({
       method: 'get',
-      url:'http://100.26.167.192:5000/api/v1/jobs/categories/'
-  })
+      url: 'http://100.26.167.192:5000/api/v1/jobs/categories/'
+    })
     setCatData(res.data)
   }
 
@@ -65,10 +65,9 @@ const Home = () => {
             </span>
             <p className='text_white_3 mt-2'>Find a job you’ll love</p>
           </div>
-        
         </div>
         <div className=''>
-          <SearchSection path='/search'/>
+          <SearchSection path='/search' />
         </div>
         <div className='flex-col-center mt_13'>
           <span className='text_white_6'>
@@ -93,13 +92,16 @@ const Home = () => {
         <span className='text_primary_2'>Trending Jobs</span>
       </div>
       <div className='flex-row-center gap-1 mt-4 px-5 flex-wrap'>
-        {
-          catData?.map((item) => {
-            return (
-              <PrimaryOutlinebtn id={item?.cat_id} path='/search' key={item?.cat_id} text={item?.cat_name} />
-            )
-          })
-        }
+        {catData?.map((item) => {
+          return (
+            <PrimaryOutlinebtn
+              id={item?.cat_id}
+              path='/search'
+              key={item?.cat_id}
+              text={item?.cat_name}
+            />
+          )
+        })}
       </div>
       <div className='flex-col-center mt-4 mb-2'>
         <div className='flex-row-between' style={{ width: '35%' }}>
@@ -136,22 +138,20 @@ const Home = () => {
         <span className='text_primary_2'>Popular Jobs</span>
       </div>
       <Row className='g-2'>
-        {
-          slice?.map((item, i) => {
-            return (
-              <Col key={i} sm={6} md={6} lg={4} xxl={3}>
-                <CommonCardSecond
-                  text={item?.title}
-                  subText={item?.agency_name}
-                  price={item?.salary}
-                  type={item?.job_types}
-                  location={item?.location}
-                  path={item?.apply_link}
-                />
-              </Col>
-            )
-          })
-        }
+        {slice?.map((item, i) => {
+          return (
+            <Col key={i} sm={6} md={6} lg={4} xxl={3}>
+              <CommonCardSecond
+                text={item?.title}
+                subText={item?.agency_name}
+                price={item?.salary}
+                type={item?.job_types}
+                location={item?.location}
+                path={item?.apply_link}
+              />
+            </Col>
+          )
+        })}
         {/* <Col sm={6} md={6} lg={4} xxl={3}>
           <CommonCardSecond
             text='Security Job'
