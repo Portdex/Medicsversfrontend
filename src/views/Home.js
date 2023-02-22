@@ -46,35 +46,42 @@ const Home = () => {
   }
   const slice = data.slice(0, noOfData)
   return (
-    <Fragment>
-      <div
+    <Row>
+      <Col
+        className=''
         style={{
-          backgroundColor: '#FF00CD',
-          paddingTop: 73,
-          paddingBottom: 43,
-          paddingLeft: 255,
-          paddingRight: 255
+          backgroundColor: '#FF00CD'
         }}
       >
-        <div className='flex-row-center'>
-          <div className='flex-col-start'>
-            <span className='text_white_2'>Love</span>
-            <span className='text_white_2' style={{ marginTop: -30 }}>
-              M<img src={HeartIcon} width={32} height={25} />
-              ndays
-            </span>
-            <p className='text_white_3 mt-2'>Find a job you’ll love</p>
-          </div>
-        </div>
-        <div className=''>
-          <SearchSection path='/search' />
-        </div>
-        <div className='flex-col-center mt_13'>
-          <span className='text_white_6'>
-            Search 227,388 new jobs - 11,801 added in the last 24 hours
-          </span>
-        </div>
-      </div>
+        <Row className='g-1 mt-1'>
+          <Col sm={12}>
+            <div className='flex-row-center'>
+              <div className='flex-col-start'>
+                <span className='text_white_2'>Love</span>
+                <span className='text_white_2' style={{ marginTop: -30 }}>
+                  M<img src={HeartIcon} width={32} height={25} />
+                  ndays
+                </span>
+                <p className='text_white_3 mt-2'>Find a job you’ll love</p>
+              </div>
+            </div>
+          </Col>
+          <Col sm={12}>
+            <Row className='flex-row-center'>
+              <Col sm={12} md={10} lg={8} xxl={10}>
+                <SearchSection path='/search' />
+              </Col>
+            </Row>
+          </Col>
+          <Col sm={12}>
+            <div className='flex-col-center mt_13'>
+              <span className='text_white_6'>
+                Search 227,388 new jobs - 11,801 added in the last 24 hours
+              </span>
+            </div>
+          </Col>
+        </Row>
+      </Col>
       <div
         style={{
           backgroundColor: '#D9D9D9',
@@ -236,12 +243,12 @@ const Home = () => {
           </Col>
         </Row>
       </div>
-      <div className='mt-5 mb-3 '>
+      <Col className='mt-5 mb-3 '>
         <div className='flex-col-center'>
           <span className='text_primary_2'>Support for you</span>
         </div>
         <Row className='px-3 mt-3'>
-          <Col md={6}>
+          <Col sm={12} md={6}>
             <span className='text_primary_2'>Upskills with courses</span>
             <img src={CoursesImg} width={380} height={250} />
             <div
@@ -260,70 +267,70 @@ const Home = () => {
               />
             </div>
           </Col>
-          <Col md={6}>
+          <Col sm={12} md={6}>
             <span className='text_primary_2'>Career Advice</span>
-            <div className='flex-row-between gap-2 mt-1'>
-              <div style={{ width: '80%' }}>
+            <Row className='flex-row-between g-1 mt-1 '>
+              <Col sm={12} lg={6}>
                 <CommonCardThird
                   cardImg={FirstCardImg}
                   text='Free Cv Templates'
                 />
-              </div>
-              <div style={{ width: '80%' }}>
+              </Col>
+              <Col sm={12} lg={6}>
                 <CommonCardThird
                   cardImg={FirstCardImg}
                   text='How to: Manage your mental health whilst jobseeking'
                 />
-              </div>
-            </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
-        <Row className='px-3'>
-          <Col md={6}>
-            <div style={{ marginTop: -90 }}>
+        <Row className='px-3 g-1 mt-1 mt-md-0'>
+          <Col sm={12} md={6}>
+            <div className='flex-col-start'>
               <span className='text_primary_5'>
                 Invest in your future with thousands of courses to help you
                 learn and develop. Browse courses
               </span>
+              <Button
+                outline
+                color='primary'
+                className='mt-2'
+                style={{
+                  borderRadius: 0,
+                  borderWidth: 2,
+                  paddingTop: 12,
+                  paddingBottom: 12
+                }}
+              >
+                <span className='text_primary_3'>Browse Courses</span>
+              </Button>
             </div>
-            <Button
-              outline
-              color='primary'
-              className='mt-2'
-              style={{
-                borderRadius: 0,
-                borderWidth: 2,
-                paddingTop: 12,
-                paddingBottom: 12
-              }}
-            >
-              <span className='text_primary_3'>Browse Courses</span>
-            </Button>
           </Col>
-          <Col md={6}>
-            <div style={{ marginTop: -90 }}>
+          <Col sm={12} md={6}>
+            <div className='flex-col-start'>
               <span className='text_primary_5'>
                 Take your job search to the next level with our expert tips and
                 career advice. Browse career advice
               </span>
+              <Button
+                outline
+                color='primary'
+                className='mt-2'
+                style={{
+                  borderRadius: 0,
+                  borderWidth: 2,
+                  paddingTop: 12,
+                  paddingBottom: 12
+                }}
+              >
+                <span className='text_primary_3'>Browse Carrier Advice</span>
+              </Button>
             </div>
-            <Button
-              outline
-              color='primary'
-              className='mt-2'
-              style={{
-                borderRadius: 0,
-                borderWidth: 2,
-                paddingTop: 12,
-                paddingBottom: 12
-              }}
-            >
-              <span className='text_primary_3'>Browse Carrier Advice</span>
-            </Button>
           </Col>
         </Row>
-      </div>
-    </Fragment>
+      </Col>
+    </Row>
   )
 }
 
