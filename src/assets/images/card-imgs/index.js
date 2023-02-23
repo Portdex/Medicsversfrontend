@@ -13,8 +13,10 @@ import BlackCrossImg from './blackCross.png'
 import BlackMarkerImg from './blackMarker.png'
 import JobCardImg from './jobCardImg.png'
 import GreaterThanImg from './right.png'
+import SearchImg from './1.png'
 
 export {
+    SearchImg,
     FirstCardImg,
     FooterImg1,
     ClockIcon,

@@ -11,21 +11,33 @@ import {
   FirstCardImg,
   HeartIcon,
   SafestoreImg,
+  SearchImg,
   SearchSectionImg
 } from '../assets/images/card-imgs'
 
 import axios from 'axios'
+import TwoTabs from '../@core/ui-components/tabs/TwoTabs'
 
 const Home = () => {
   const [data, setData] = useState([])
   const [catData, setCatData] = useState()
   const [noOfData, setnoOfData] = useState(3)
+
   const getJobs = async () => {
-    const res = await axios({
-      method: 'get',
-      url: 'http://100.26.167.192:5000/api/v1/jobs/'
-    })
-    setData(res.data)
+    axios
+      .get('http://100.26.167.192:5000/api/v1/jobs/')
+      .then((response) => {
+        console.log(response)
+        setData(response.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+    // const res = await axios({
+    //   method: 'get',
+    //   url: 'http://100.26.167.192:5000/api/v1/jobs/'
+    // })
+    // setData(res.data)
   }
 
   const getJobCat = async () => {
@@ -50,10 +62,10 @@ const Home = () => {
       <Col
         className=''
         style={{
-          backgroundColor: '#FF00CD'
+          backgroundColor: '#081999'
         }}
       >
-        <Row className='g-1 mt-1'>
+        <Row className='g-1 mt-3'>
           <Col sm={12}>
             <div className='flex-row-center'>
               <div className='flex-col-start'>
@@ -64,10 +76,11 @@ const Home = () => {
                 </span>
                 <p className='text_white_3 mt-2'>Find a job you’ll love</p>
               </div>
+              {/* <img src={SearchImg} width={434} height={434} /> */}
             </div>
           </Col>
-          <Col sm={12}>
-            <Row className='flex-row-center'>
+          <Col sm={12} className='mt-5'>
+            <Row className='flex-row-center' style={{ marginTop: -5 }}>
               <Col sm={12} md={10} lg={8} xxl={10}>
                 <SearchSection path='/search' />
               </Col>
@@ -110,11 +123,12 @@ const Home = () => {
           )
         })}
       </div>
-      <div className='flex-col-center mt-4 mb-2'>
-        <div className='flex-row-between' style={{ width: '35%' }}>
+      <div className='flex-col-center mt-4'>
+        {/* <div className='flex-row-between' style={{ width: '35%' }}>
           <span className='text_primary_4'>Search by Sector</span>
           <span className='text_primary_4'>Search by Location</span>
-        </div>
+        </div> */}
+        <TwoTabs />
       </div>
       <Row className='g-1  '>
         <Col xs={12} sm={6} md={4} lg={3} xl={3} className='flex-xs-col-center'>
@@ -248,35 +262,37 @@ const Home = () => {
           <span className='text_primary_2'>Support for you</span>
         </div>
         <Row className='px-3 mt-3'>
-          <Col sm={12} md={6}>
-            <span className='text_primary_2'>Upskills with courses</span>
-            <img src={CoursesImg} width={380} height={250} />
-            <div
-              style={{
-                position: 'relative',
-                left: 210,
-                top: -100,
-                width: '60%'
-              }}
-            >
-              <CommonCardSecond
-                color='white'
-                text='Security Job'
-                subText='Vision2Learn'
-                price='Free'
-              />
+          <Col sm={12} md={12} lg={12} xl={6}>
+            <div className='d-flex flex-column justify-content-sm-center align-items-sm-center align-items-xl-start'>
+              <span className='text_primary_2'>Upskills with courses</span>
+              <img src={CoursesImg} width={380} height={250} className='mt-2' />
+              <div
+                style={{
+                  position: 'relative',
+                  left: 210,
+                  top: -100,
+                  width: 350
+                }}
+              >
+                <CommonCardSecond
+                  color='white'
+                  text='Security Job'
+                  subText='Vision2Learn'
+                  price='Free'
+                />
+              </div>
             </div>
           </Col>
-          <Col sm={12} md={6}>
+          <Col sm={12} md={12} lg={12} xl={6}>
             <span className='text_primary_2'>Career Advice</span>
             <Row className='flex-row-between g-1 mt-1 '>
-              <Col sm={12} lg={6}>
+              <Col xs={12} sm={6} md={6} lg={6}>
                 <CommonCardThird
                   cardImg={FirstCardImg}
                   text='Free Cv Templates'
                 />
               </Col>
-              <Col sm={12} lg={6}>
+              <Col xs={12} sm={6} md={6} lg={6}>
                 <CommonCardThird
                   cardImg={FirstCardImg}
                   text='How to: Manage your mental health whilst jobseeking'
