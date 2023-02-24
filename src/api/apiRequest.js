@@ -22,3 +22,16 @@ export const apiHit = async ({ body, dispatch }) => {
       return err
     })
 }
+
+const ApiCalls = async ({ body }) => {
+  return await axios
+    .post(API_URL, body, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((err) => {
+      return err
+    })
+}

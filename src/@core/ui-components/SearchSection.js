@@ -28,13 +28,13 @@ const SearchSection = (props) => {
     //     </span>
     //   </Button.Ripple>
     <Row className='p-2 round g-1' style={{ background: '#081351' }}>
-      <Col sm={12} md={6} xxl={5}>
+      <Col sm={12} md={4} lg={4} xxl={5}>
         <div className='flex-col-start'>
           <Label className='text_white_1'>What</Label>
           <Input style={{ borderRadius: 0 }} />
         </div>
       </Col>
-      <Col sm={12} md={6} xxl={5}>
+      <Col sm={12} md={4} lg={4} xxl={5}>
         <div className='flex-col-start'>
           <Label className='text_white_1'>Where</Label>
           <Input style={{ borderRadius: 0 }} />
@@ -45,16 +45,18 @@ const SearchSection = (props) => {
           </div>
         </div>
       </Col>
-      <Col sm={12} md={6} xxl={2}>
-        <Button.Ripple
-          block
-          color='#FF00CD'
-          className='Btn-pink search-container-btn mt-md-0 mt-lg-0 mt-xl-2'
-        >
-          <span className='text_white_5' onClick={() => history.push(path)}>
-            Search Jobs
-          </span>
-        </Button.Ripple>
+      <Col sm={12} md={4} lg={4} xxl={2}>
+        <div className='mt-2'>
+          <Button.Ripple
+            block
+            color='#081381'
+            className='Btn-pink search-container-btn'
+          >
+            <span className='text_white_5' onClick={() => history.push(path)}>
+              Search&nbsp;Jobs
+            </span>
+          </Button.Ripple>
+        </div>
       </Col>
     </Row>
     // </div>

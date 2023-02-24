@@ -141,10 +141,10 @@ const HorizontalLayout = (props) => {
             <ul className='nav navbar-nav'>
               <NavItem>
                 <Link to='/' className='navbar-brand'>
-                  <span className='brand-logo'>
+                  {/* <span className='brand-logo'>
                     <img src={themeConfig.app.appLogoImage} alt='logo' />
-                  </span>
-                  {/* <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2> */}
+                  </span> */}
+                  <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2>
                   <div className=' main-menu-content ms-4'>
                     <ul className='nav navbar-nav' id='main-menu-navigation'>
                       <Nav>
@@ -154,14 +154,23 @@ const HorizontalLayout = (props) => {
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'><span className='text_black_2'>Courses</span></NavLink>
+                          <NavLink href='#'>
+                            <span className='text_black_2'>Courses</span>
+                          </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'><span className='text_black_2'>Career advice</span></NavLink>
+                          <NavLink href='#'>
+                            <span className='text_black_2'>
+                              Health care Agencies
+                            </span>
+                          </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href='#'><span className='text_black_2'>Recruiting?</span> <span className='text_black_3'>Post a job</span></NavLink>
-                        </NavItem>                      
+                          <NavLink href='#'>
+                            <span className='text_black_2'>Recruiting?</span>{' '}
+                            <span className='text_black_3'>Post a job</span>
+                          </NavLink>
+                        </NavItem>
                       </Nav>
                     </ul>
                   </div>
