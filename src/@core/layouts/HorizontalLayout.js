@@ -160,7 +160,9 @@ const HorizontalLayout = (props) => {
                         </NavItem>
                         <NavItem>
                           <NavLink href='#'>
-                            <span className='text_black_2'>Career advice</span>
+                            <span className='text_black_2'>
+                              Health care Agencies
+                            </span>
                           </NavLink>
                         </NavItem>
                         <NavItem>

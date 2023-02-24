@@ -132,19 +132,16 @@ const Home = () => {
       </div>
       <Row className='g-1  '>
         <Col xs={12} sm={6} md={4} lg={3} xl={3} className='flex-xs-col-center'>
-          <CommonCardOne text='Security' cardImg={FirstCardImg} />
+          <CommonCardOne text='Hospital' cardImg={FirstCardImg} />
         </Col>
         <Col xs={12} sm={6} md={4} lg={3} xl={3} className='flex-xs-col-center'>
-          <CommonCardOne text='Security Officer' cardImg={FirstCardImg} />
+          <CommonCardOne text='Nurses jobs' cardImg={FirstCardImg} />
         </Col>
         <Col xs={12} sm={6} md={4} lg={3} xl={3} className='flex-xs-col-center'>
-          <CommonCardOne text='Static Security Guard' cardImg={FirstCardImg} />
+          <CommonCardOne text='doctor' cardImg={FirstCardImg} />
         </Col>
         <Col xs={12} sm={6} md={4} lg={3} xl={3} className='flex-xs-col-center'>
-          <CommonCardOne
-            text='Corporate Security Guard'
-            cardImg={FirstCardImg}
-          />
+          <CommonCardOne text='London jobs' cardImg={FirstCardImg} />
         </Col>
       </Row>
       <div className='mt_16 flex-col-center mb-4'>
