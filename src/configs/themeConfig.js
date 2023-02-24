@@ -3,7 +3,7 @@
 //Template config options
 const themeConfig = {
   app: {
-    appName: 'Vuexy',
+    appName: 'MedicsVerse ',
     appLogoImage: require('@src/assets/images/logo/logo-1.svg').default
   },
   layout: {
