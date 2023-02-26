@@ -145,37 +145,43 @@ const HorizontalLayout = (props) => {
                     <img src={themeConfig.app.appLogoImage} alt='logo' />
                   </span> */}
                   <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2>
-                  <div className=' main-menu-content ms-4'>
-                    <ul className='nav navbar-nav' id='main-menu-navigation'>
-                      <Nav>
-                        <NavItem>
-                          <NavLink href='#' active>
-                            <span className='text_black_2'>Jobs</span>
-                          </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink href='#'>
-                            <span className='text_black_2'>Courses</span>
-                          </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink href='#'>
-                            <span className='text_black_2'>
-                              Health care Agencies
-                            </span>
-                          </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink href='#'>
-                            <span className='text_black_2'>Recruiting?</span>{' '}
-                            <span className='text_black_3'>Post a job</span>
-                          </NavLink>
-                        </NavItem>
-                      </Nav>
-                    </ul>
-                  </div>
                 </Link>
               </NavItem>
+              {/* <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2> */}
+              <div className=' main-menu-content ms-4'>
+                <ul className='nav navbar-nav' id='main-menu-navigation'>
+                  <Nav>
+                    <NavItem>
+                      <NavLink href='/forums' active>
+                        <span className='text_black_2'>Forums</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#' active>
+                        <span className='text_black_2'>Jobs</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#'>
+                        <span className='text_black_2'>Courses</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#'>
+                        <span className='text_black_2'>
+                          Health care Agencies
+                        </span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#'>
+                        <span className='text_black_2'>Recruiting?</span>{' '}
+                        <span className='text_black_3'>Post a job</span>
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+                </ul>
+              </div>
             </ul>
           </div>
         )}

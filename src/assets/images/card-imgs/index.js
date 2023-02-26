@@ -14,6 +14,7 @@ import BlackMarkerImg from './blackMarker.png'
 import JobCardImg from './jobCardImg.png'
 import GreaterThanImg from './right.png'
 import SearchImg from './1.png'
+import ChatIcon from './chat.png'
 
 export {
     SearchImg,
@@ -31,5 +32,6 @@ export {
     BlackMarkerImg,
     BlackDropDownIcon,
     JobCardImg,
-    GreaterThanImg
+    GreaterThanImg,
+    ChatIcon
 }
