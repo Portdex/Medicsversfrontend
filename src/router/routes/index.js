@@ -36,6 +36,24 @@ const Routes = [
     }
   },
   {
+    path: '/agencies',
+    component: lazy(() => import('../../views/agency/Agrencies')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
+    path: '/new-post',
+    component: lazy(() => import('../../views/forum/ForumPost')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
     path: '/second-page',
     component: lazy(() => import('../../views/SecondPage'))
   },

@@ -70,13 +70,13 @@ const JobSearchPage = () => {
                     <span className='text_primary_3'>Get Job Alerts</span>
                 </Button>
                 <JobCard title='Security Officer' salary='Competitive salary' type='Permanent, full-time' location='Location' link='/'/>
-                    {/* {
+                    {
                         data?.map((item) => {
                             return (
                                 <JobCard title={item?.title} salary={item?.salary} type={item?.job_types} location={item?.location} link={item?.apply_link}/>
                             )
                         })
-                    } */}
+                    }
                 </Col>
             </Row>
         </div>

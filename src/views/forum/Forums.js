@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Button, Card, CardBody, CardHeader, Col, Row } from 'reactstrap'
 import ForumCard from '../../@core/ui-components/custom-cards/ForumCard'
 import { AvatarIcon } from '../../assets/images/avatars'
 
 const Forums = () => {
+  const history = useHistory()
   return (
     <Fragment>
         {/* Header sec */}
         <div className='flex-row-between mt-1'>
             <span>Tattle Life</span>
-            <Button color='primary'>New posts</Button>
+            <Button color='primary' onClick={() => history.push('/new-post')}>New posts</Button>
         </div>
         <Row className='mt-1 g-1'>
             <Col md={9}>

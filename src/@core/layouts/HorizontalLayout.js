@@ -20,6 +20,7 @@ import themeConfig from '@configs/themeConfig'
 import Customizer from '@components/customizer'
 import ScrollToTop from '@components/scrolltop'
 import NavbarComponent from './components/navbar'
+// import NavbarComponent from './components/hrorizontal-navbar'
 import FooterComponent from './components/footer'
 import MenuComponent from './components/menu/horizontal-menu'
 
@@ -56,6 +57,7 @@ const HorizontalLayout = (props) => {
   // ** States
   const [isMounted, setIsMounted] = useState(false)
   const [navbarScrolled, setNavbarScrolled] = useState(false)
+  const [menuVisibility, setMenuVisibility] = useState(false)
 
   // ** Store Vars
   const dispatch = useDispatch()
@@ -90,6 +92,13 @@ const HorizontalLayout = (props) => {
     })
     return () => cleanup()
   }, [])
+
+  //** This function will detect the Route Change and will hide the menu on menu item click
+  useEffect(() => {
+    if (menuVisibility && windowWidth < 1200) {
+      setMenuVisibility(false)
+    }
+  }, [location])
 
   // ** Vars
   const footerClasses = {
@@ -157,7 +166,9 @@ const HorizontalLayout = (props) => {
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href='#' active>
+
+                      <NavLink href='/search' active>
+
                         <span className='text_black_2'>Jobs</span>
                       </NavLink>
                     </NavItem>
@@ -167,7 +178,9 @@ const HorizontalLayout = (props) => {
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href='#'>
+
+                      <NavLink href='/agencies'>
+
                         <span className='text_black_2'>
                           Health care Agencies
                         </span>
