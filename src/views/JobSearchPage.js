@@ -69,6 +69,7 @@ const JobSearchPage = () => {
                 <Button outline color='primary' className='mb-2' style={{borderRadius: 4, borderWidth: 2, paddingTop: 19, paddingBottom: 18}}>
                     <span className='text_primary_3'>Get Job Alerts</span>
                 </Button>
+                <JobCard title='Security Officer' salary='Competitive salary' type='Permanent, full-time' location='Location' link='/'/>
                     {
                         data?.map((item) => {
                             return (

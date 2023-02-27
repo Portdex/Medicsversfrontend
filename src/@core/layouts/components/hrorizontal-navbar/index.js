@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 
 // ** Custom Components
 import NavbarUser from './NavbarUser'
@@ -9,18 +9,18 @@ import { Menu } from 'react-feather'
 
 // ** Reactstrap Imports
 import { NavItem, NavLink } from 'reactstrap'
-// import SidebarComponent from './SidebarComponent'
+import SidebarComponent from './SidebarComponent'
 
 const ThemeNavbar = (props) => {
   // ** Props
   const { skin, setSkin } = props
-  // const [canvasPlacement, setCanvasPlacement] = useState('start')
-  // const [canvasOpen, setCanvasOpen] = useState(false)
+  const [canvasPlacement, setCanvasPlacement] = useState('start')
+  const [canvasOpen, setCanvasOpen] = useState(false)
 
-  // const toggleCanvasStart = () => {
-  //   setCanvasPlacement('start')
-  //   setCanvasOpen(!canvasOpen)
-  // }
+  const toggleCanvasStart = () => {
+    setCanvasPlacement('start')
+    setCanvasOpen(!canvasOpen)
+  }
 
   return (
     <Fragment>
@@ -28,18 +28,18 @@ const ThemeNavbar = (props) => {
         <NavItem className='mobile-menu me-auto d-flex align-items-center'>
           <NavLink
             className='nav-menu-main menu-toggle hidden-xs is-active'
-            // onClick={() => toggleCanvasStart()}
+            onClick={() => toggleCanvasStart()}
           >
             <Menu className='ficon' />
           </NavLink>
         </NavItem>
       </ul>
       <NavbarUser skin={skin} setSkin={setSkin} />
-      {/* <SidebarComponent
+      <SidebarComponent
         toggleCanvasStart={toggleCanvasStart}
         canvasPlacement={canvasPlacement}
         canvasOpen={canvasOpen}
-      /> */}
+      />
     </Fragment>
   )
 }

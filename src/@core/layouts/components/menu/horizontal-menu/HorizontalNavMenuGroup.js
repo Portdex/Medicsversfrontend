@@ -1,134 +1,132 @@
 // ** React Imports
-import { useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 // ** Third Party Components
 import classnames from 'classnames'
-
-// ** Reactstrap Imports
-import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap'
+import { usePopper } from 'react-popper'
+import { useTranslation } from 'react-i18next'
 
 // ** Utils
 import { hasActiveChild } from '@layouts/utils'
 
+// ** Hooks
+import { useRTL } from '@hooks/useRTL'
+
 // ** Horizontal Menu Items Component
 import HorizontalNavMenuItems from './HorizontalNavMenuItems'
 
-const HorizontalNavMenuGroup = props => {
-  // ** Props
-  const {
-    item,
-    submenu,
-    activeItem,
-    routerProps,
-    groupActive,
-    onMouseEnter,
-    onMouseLeave,
-    openDropdown,
-    setActiveItem,
-    setGroupActive,
-    setOpenDropdown,
-    currentActiveItem
-  } = props
-
-  // ** Hooks
-  const location = useLocation()
-
-  // ** URL Var
-  const currentURL = useLocation().pathname
-
-  useEffect(() => {
-    if (hasActiveChild(item, currentURL)) {
-      if (!groupActive.includes(item.id)) groupActive.push(item.id)
-    } else {
-      const index = groupActive.indexOf(item.id)
-      if (index > -1) groupActive.splice(index, 1)
-    }
-    setGroupActive([...groupActive])
-  }, [location])
-
-  // ** Dropdown menu modifiers
-  const menuModifiers = [
-    {
-      enabled: true,
-      phase: 'write',
-      name: 'setMaxHeight',
-      fn: data => {
-        const pageHeight = window.innerHeight,
-          popperEl = data.state.elements.popper,
-          ddTop = popperEl.getBoundingClientRect().top,
-          ddHeight = popperEl.clientHeight
-
-        let maxHeight, stylesObj
-
-        // ** Calculate and set height
-        if (pageHeight - ddTop - ddHeight - 28 < 1) {
-          maxHeight = pageHeight - ddTop - 25
-          stylesObj = {
-            maxHeight,
-            overflowY: 'auto'
-          }
-        }
-
-        const ddRef = popperEl.getBoundingClientRect()
-
-        // ** If there is not space left to open sub menu open it to the right
-        if (ddRef.left + ddRef.width - (window.innerWidth - 16) >= 0) {
-          popperEl.closest('.dropdown').classList.add('openLeft')
-        }
-
-        data.state.styles.popper = { ...data.state.styles.popper, ...stylesObj }
+const applyHeight = {
+  enabled: true,
+  name: 'applyHeight',
+  phase: 'beforeWrite',
+  fn: (data) => {
+    const pageHeight = window.innerHeight,
+      popperEl = data.state.elements.popper,
+      ddTop = popperEl.getBoundingClientRect().top,
+      ddHeight = popperEl.clientHeight
+    let maxHeight, stylesObj
+    // ** Calculate and set height
+    if (pageHeight - ddTop - ddHeight - 28 < 1) {
+      maxHeight = pageHeight - ddTop - 25
+      stylesObj = {
+        maxHeight,
+        overflowY: 'auto'
       }
     }
-  ]
+    const ddRef = popperEl.getBoundingClientRect()
+    // ** If there is not space left to open sub menu open it to the right
+    if (ddRef.left + ddRef.width - (window.innerWidth - 16) >= 0) {
+      popperEl.closest('.dropdown').classList.add('openLeft')
+    }
+    data.state.styles.popper = { ...data.state.styles.popper, ...stylesObj }
+  }
+}
+
+const HorizontalNavMenuGroup = (props) => {
+  // ** Props
+  const { item, submenu, isChild } = props
+
+  // ** State
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [popperElement, setPopperElement] = useState(null)
+  const [referenceElement, setReferenceElement] = useState(null)
+
+  // ** Hooks
+  const [isRtl] = useRTL()
+
+  // ** Vars
+  const popperOffsetHorizontal = isRtl ? 16 : -16
+  const popperPlacement = isRtl ? 'bottom-end' : 'bottom-start'
+  const popperPlacementSubMenu = isRtl ? 'left-start' : 'right-start'
+
+  // ** Hooks
+  const { t } = useTranslation()
+  const currentURL = useLocation().pathname
+  const { update, styles, attributes } = usePopper(
+    referenceElement,
+    popperElement,
+    {
+      placement: isChild ? popperPlacementSubMenu : popperPlacement,
+      modifiers: [
+        applyHeight,
+        {
+          enabled: true,
+          name: 'offset',
+          options: {
+            offset: isChild ? [-8, 15] : [popperOffsetHorizontal, 5]
+          }
+        }
+      ]
+    }
+  )
+
+  const handleMouseEnter = () => {
+    setMenuOpen(true)
+    update()
+  }
+
   return (
-    <Dropdown
-      tag='li'
-      toggle={() => null}
-      className={classnames({
+    <li
+      ref={setReferenceElement}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={() => setMenuOpen(false)}
+      className={classnames('dropdown', {
+        show: menuOpen,
         'nav-item': submenu === false,
         'dropdown-submenu': submenu === true,
-        'sidebar-group-active active': groupActive.includes(item.id)
+        'sidebar-group-active active': hasActiveChild(item, currentURL)
       })}
-      isOpen={openDropdown.includes(item.id)}
-      onMouseEnter={() => onMouseEnter(item.id)}
-      onMouseLeave={() => onMouseLeave(item.id)}
     >
-      <DropdownToggle
+      <Link
         to='/'
-        tag={Link}
-        onClick={e => e.preventDefault()}
+        onClick={(e) => e.preventDefault()}
         className={classnames('dropdown-toggle d-flex align-items-center', {
           'dropdown-item': submenu === true,
           'nav-link': submenu === false
         })}
       >
         {item.icon}
-        <span>{item.title}</span>
-      </DropdownToggle>
-      <DropdownMenu
-        tag='ul'
-        modifiers={menuModifiers}
-        className={classnames({ 'first-level': submenu === false })}
+        <span>{t(item.title)}</span>
+      </Link>
+      <ul
+        ref={setPopperElement}
+        style={{ ...styles.popper }}
+        {...attributes.popper}
+        className={classnames('dropdown-menu', {
+          'first-level': submenu === false
+        })}
       >
         <HorizontalNavMenuItems
+          isChild={true}
           submenu={true}
           parentItem={item}
+          menuOpen={menuOpen}
           items={item.children}
-          activeItem={activeItem}
-          groupActive={groupActive}
-          routerProps={routerProps}
-          openDropdown={openDropdown}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          setActiveItem={setActiveItem}
-          setGroupActive={setGroupActive}
-          isChild={true}
-          setOpenDropdown={setOpenDropdown}
-          currentActiveItem={currentActiveItem}
+          setMenuOpen={setMenuOpen}
         />
-      </DropdownMenu>
-    </Dropdown>
+      </ul>
+    </li>
   )
 }
 

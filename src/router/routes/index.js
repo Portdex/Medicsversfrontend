@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 // ** Document title
-const TemplateTitle = '%s - Vuexy React Admin Template'
+const TemplateTitle = '%s - MedicsVerse'
 
 // ** Default Route
 const DefaultRoute = '/home'
@@ -20,6 +20,33 @@ const Routes = [
   {
     path: '/search',
     component: lazy(() => import('../../views/JobSearchPage')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
+    path: '/forums',
+    component: lazy(() => import('../../views/forum/Forums')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
+    path: '/agencies',
+    component: lazy(() => import('../../views/agency/Agrencies')),
+    layout: 'HorizontalLayout',
+    meta: {
+      authRoute: true,
+      menuHidden: true
+    }
+  },
+  {
+    path: '/new-post',
+    component: lazy(() => import('../../views/forum/ForumPost')),
     layout: 'HorizontalLayout',
     meta: {
       authRoute: true,

@@ -9,8 +9,12 @@ import {
   UncontrolledDropdown
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
+
+// ** Third Party Components
+import { Sun, Moon, Heart } from 'react-feather'
 // import { LogoHome } from '../../../../assets/images/logo'
 // import { En, IconDownArrow, IconGlobe } from '../../../../assets/images/icons'
+
 const SidebarComponent = (props) => {
   // ** props
   const { toggleCanvasStart, canvasPlacement, canvasOpen } = props
@@ -24,37 +28,42 @@ const SidebarComponent = (props) => {
       >
         <OffcanvasHeader toggle={toggleCanvasStart}>
           <ul className=' nav navbar-nav ps-2 ms-5'>
-            <NavItem className='nav-link-style'>
+            <NavItem
+              className='nav-link-style'
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingTop: '6px'
+              }}
+            >
               <Link to='/home' className='navbar-brand'>
-                <span className='brand-logo'>
-                  {/* <h2 className='brand-text mb-0'>MedicsVerse</h2> */}
-                </span>
+                <h2 className='brand-text '>MedicsVerse</h2>
               </Link>
             </NavItem>
           </ul>
         </OffcanvasHeader>
         <hr />
-
         <OffcanvasBody>
           <div className='flex-col-start justify-content-between h-100'>
-            <div className='flex-col-center w-100'>
-              <Button block color='primary mt-1 mb-1'>
-                Sign Up
+            <div className='flex-col-center w-100 gap-2 mt-5'>
+              <Button block color='primary' size='md' outline>
+                <span className='text_black_2'>Register CV</span>
               </Button>
-              <Button.Ripple
-                style={{ height: 39 }}
-                block
-                className='btn-primary-2'
-              >
-                Join as partner
-              </Button.Ripple>
-              <hr className='w-100' />
-              <Button.Ripple block outline color='primary'>
-                Help
-              </Button.Ripple>
+              <Button block color='primary' size='md'>
+                <span className='text-white'>Sign in</span>
+              </Button>
             </div>
           </div>
         </OffcanvasBody>
+        <div className='flex-col-center'>
+          <hr className='w-100' />
+          <Button color='withe' size='sm' outline>
+            <span className='text_black_2'>
+              <Heart size={18} className='ficon' /> Saved Jobs
+            </span>
+          </Button>
+        </div>
       </Offcanvas>
     </div>
   )
